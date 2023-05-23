@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.2.3",
+    "navigo": "^8.11.1",
     "tailwind": "^4.0.0"
   }
 }
