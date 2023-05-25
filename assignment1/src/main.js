@@ -15,9 +15,9 @@ router.on('/', function () {
   app.innerHTML = HomePage()
 })
 
-router.on('/product', function () {
-  console.log("ProductPage");
-  app.innerHTML = ProductPage()
+router.on('/product/:id', function (param) {
+  // console.log("param", param);
+  app.innerHTML = ProductPage(param)
 })
 
 router.notFound(function () {
