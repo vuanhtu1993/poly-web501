@@ -38,8 +38,8 @@
 // }
 
 
+let status = false
 const render = function () {
-    let status = false
     document.body.innerHTML = `<div>
     ${status
             ? `<img style="max-width: 100px" src="./images/on.png"/>`
