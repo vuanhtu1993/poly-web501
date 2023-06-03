@@ -1,27 +1,29 @@
-import Navigo from 'navigo'
+import { router, render } from './lib'
 
 import '../style.css'
 import HomePage from './pages/home'
 import ProductPage from './pages/product'
 import NotFoundPage from './pages/notFound'
+import Dashboard from './pages/dashboard'
 const app = document.querySelector("#app")
 
 
 
 // Router
-const router = new Navigo('/')
 router.on('/', function () {
-  console.log("Homepage");
-  app.innerHTML = HomePage()
+  render(HomePage, app)
 })
 
 router.on('/product/:id', function (param) {
-  // console.log("param", param);
-  app.innerHTML = ProductPage(param)
+  render(ProductPage, app)
+})
+
+router.on('/admin', function () {
+  render(Dashboard, app)
 })
 
 router.notFound(function () {
-  app.innerHTML = NotFoundPage()
+  render(NotFoundPage, app)
 })
 
 router.resolve()

@@ -1,16 +1,27 @@
 import Header from "../components/header"
-import data from '../../db.json' assert {type: 'json'}
+// Destructoring
+import { useState, useEffect } from '../lib'
 
 const HomePage = function () {
-    console.log(data);
+    const [books, setBooks] = useState([])
+    useEffect(function () {
+        // call API
+        fetch('http://localhost:3000/books')
+            .then(function (res) {
+                return res.json()
+            })
+            .then(function (data) {
+                setBooks(data)
+            })
+    })
     return /*html*/`
         <div>
             ${Header()}
             <h1>HomePage</h1>
             <div class="grid grid-cols-4 gap-3">
-            ${data.map(function (book) {
-                return /*html*/`
-                <a href="#" class="block group">
+            ${books.map(function (book) {
+        return /*html*/`
+                <a href="/product/${book.id}" class="block group">
                     <img
                         src="${book.images[0]}"
                         alt=""
@@ -26,7 +37,7 @@ const HomePage = function () {
                     </div>
                 </a>      
                 `
-            }).join("")}
+    }).join("")}
             </div>
             
         </div>
