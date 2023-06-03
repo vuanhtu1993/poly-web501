@@ -37,6 +37,14 @@
 //     }
 // }
 
+// const useState = function (initState) {
+//     let state = initState
+//     const setState = function (newState) {
+//         state = newState
+//     }
+//     return [state, setState]
+// }
+
 
 let status = false
 const render = function () {
@@ -52,4 +60,5 @@ const render = function () {
         render()
     }
 }
+
 render()
