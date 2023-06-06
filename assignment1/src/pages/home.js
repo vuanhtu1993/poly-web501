@@ -13,7 +13,7 @@ const HomePage = function () {
             .then(function (data) {
                 setBooks(data)
             })
-    })
+    }, [])
     return /*html*/`
         <div>
             ${Header()}
