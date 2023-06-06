@@ -23,7 +23,7 @@ const HomePage = function () {
         return /*html*/`
                 <a href="/product/${book.id}" class="block group">
                     <img
-                        src="${book.images[0]}"
+                        src="${book.images?.[0]}"
                         alt=""
                         class="object-cover w-full rounded aspect-square"
                     />

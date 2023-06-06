@@ -18,7 +18,7 @@ const Dashboard = function () {
     useEffect(function () {
         const btnDeletes = document.querySelectorAll(".delete")
         btnDeletes.forEach((btn) => {
-            btn.onclick = function () {
+            btn.onclick = function (event) {
                 const id = btn.dataset.id
                 if (id) {
                     fetch('http://localhost:3000/books/' + id, {
