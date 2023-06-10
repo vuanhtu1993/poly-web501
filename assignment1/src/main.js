@@ -6,6 +6,7 @@ import ProductPage from './pages/product'
 import NotFoundPage from './pages/notFound'
 import Dashboard from './pages/dashboard'
 import ProductAdd from './pages/add'
+import ProductUpdate from './pages/update'
 const app = document.querySelector("#app")
 
 
@@ -26,6 +27,11 @@ router.on('/admin', function () {
 
 router.on('/admin/product/add', function () {
   render(ProductAdd, app)
+})
+
+router.on('/admin/product/:id', function ({ data: { id } }) {
+  // Object destructoring
+  render(() => ProductUpdate(id), app)
 })
 
 
